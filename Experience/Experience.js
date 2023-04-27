@@ -43,7 +43,7 @@ export default class Experience {
         })
 
         this.resources.on("ready", () => {
-            this.p5 = new p5(Sketch());
+            // this.p5 = new p5(Sketch());
             this.helpers = new Helpers();
             this.controllers = new Controllers();
             this.WPWV = new WPWV();
