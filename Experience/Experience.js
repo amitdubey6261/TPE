@@ -15,6 +15,7 @@ import WorldPhysics from './World/WorldPhysics';
 import WPWV from './World/WPWV';
 import Environment from './World/Environment';
 import Sketch from './Sketch';
+import HandleHTML from './HandleHTML';
 
 export default class Experience {
     static instance;
@@ -43,6 +44,7 @@ export default class Experience {
         })
 
         this.resources.on("ready", () => {
+            this.handleHTML = new HandleHTML();
             // this.p5 = new p5(Sketch());
             this.helpers = new Helpers();
             this.controllers = new Controllers();
