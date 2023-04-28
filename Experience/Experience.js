@@ -16,17 +16,20 @@ import WPWV from './World/WPWV';
 import Environment from './World/Environment';
 import Sketch from './Sketch';
 import HandleHTML from './HandleHTML';
+import Video from './Video';
 
 export default class Experience {
     static instance;
-    constructor(canvas) {
+    constructor(canvases) {
 
         if (Experience.instance) {
             return Experience.instance;
         }
 
+        console.log(canvases)
         Experience.instance = this;
-        this.canvas = canvas;
+        this.canvas = canvases.canvas;
+        this.video_canvas = canvases.video_canvas ;
         this.scene = new THREE.Scene();
         this.time = new Time();
         this.sizes = new Sizes();
@@ -45,7 +48,8 @@ export default class Experience {
 
         this.resources.on("ready", () => {
             this.handleHTML = new HandleHTML();
-            // this.p5 = new p5(Sketch());
+            this.video_p5 = new p5(Video());
+            this.p5 = new p5(Sketch());
             this.helpers = new Helpers();
             this.controllers = new Controllers();
             this.WPWV = new WPWV();

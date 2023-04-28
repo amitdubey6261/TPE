@@ -2,4 +2,10 @@ import './style.css'
 
 import Experience from './Experience/Experience';
 
-const experience = new Experience(document.querySelector(".experience-canvas"));
+const canvases = {
+    canvas : document.querySelector('.experience-canvas'),
+    video_canvas : document.querySelector('.p5-video')
+}
+
+// const experience = new Experience(document.querySelector(".experience-canvas"));
+const experience = new Experience( canvases );
