@@ -21,6 +21,8 @@ export default class {
         this.loginPage = document.querySelector('.login-container');
         this.signupPage = document.querySelector('.signup-container');
         this.loader = document.querySelector('.loader-container');
+        this.statsBox = document.querySelector('.stats-box');
+        this.stringAndEye = document.querySelector('.string-and-eye');
     }
 
     loadButtons() {
@@ -63,6 +65,9 @@ export default class {
         this.domElements.loginPage = this.loginPage;
         this.domElements.signupPage = this.signupPage;
         this.domElements.loader = this.loader ;
+        this.domElements.statsBox = this.statsBox ;
+        this.domElements.stringAndEye = this.stringAndEye ;
+
         this.domElements.nvb1 = this.nvb1;
         this.domElements.nvb2 = this.nvb2;
         this.domElements.nvb3 = this.nvb3;

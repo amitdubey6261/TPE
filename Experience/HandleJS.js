@@ -11,11 +11,30 @@ export default class{
     handleFunctionalities(){
         this.handleLoader();
         this.handleSignupLogin();
+        this.handleNav();
+        this.handleStatsBox();
+        this.handleStringAndEye();
     }
     // login-handle
     handleLoader(){
         this.elements.loader.style.display = 'none';
     }
+
+    //handleNav
+    handleNav(){
+        this.elements.navbar.style.display = 'block';
+    }
+
+    //handleStatBox
+    handleStatsBox(){
+        this.elements.statsBox.style.display = 'block';
+    }
+
+    handleStringAndEye(){
+        this.elements.stringAndEye.style.display = 'flex';
+
+    }
+
     
     handleSignupLogin(){
         this.toggleLoginPageToSignUpAndViceVersa();
