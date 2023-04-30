@@ -10,6 +10,7 @@ export default function Sketch() {
         let classifier;
         let count = 0 ;
 
+
         _.preload = () => {
             classifier = experience.resources.items.detectHead;
         }
@@ -23,7 +24,9 @@ export default function Sketch() {
         }
 
         function classifyVideo() {
-            classifier.classify(flippedVideo, gotResult);
+            if(experience.cameraOn){
+                classifier.classify(flippedVideo, gotResult);
+            }
         }
 
         function gotResult(err, results) {
@@ -40,8 +43,12 @@ export default function Sketch() {
                 beep.play();
                 count = 0;
             }
+        }
 
-            classifyVideo();
+        _.draw = ()=>{
+            if(experience.cameraOn){
+                classifyVideo();
+            }
         }
     }
 }

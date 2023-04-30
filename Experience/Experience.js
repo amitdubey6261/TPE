@@ -18,6 +18,7 @@ import Sketch from './Sketch';
 import HandleHTML from './HandleHTML';
 import Video from './Video';
 import Typing from './World/Typing';
+import HandleVideo from './HandleVideo';
 
 export default class Experience {
     static instance;
@@ -30,6 +31,7 @@ export default class Experience {
         Experience.instance = this;
         this.canvas = canvases.canvas;
         this.video_canvas = canvases.video_canvas ;
+        this.cameraOn = true ; 
         this.scene = new THREE.Scene();
         this.time = new Time();
         this.sizes = new Sizes();
@@ -48,8 +50,7 @@ export default class Experience {
 
         this.resources.on("ready", () => {
             this.handleHTML = new HandleHTML();
-            this.video_p5 = new p5(Video());
-            // this.ml_p5 = new p5(Sketch());
+            this.handleVideoCamera = new HandleVideo();
             this.helpers = new Helpers();
             this.controllers = new Controllers();
             this.environment = new Environment();

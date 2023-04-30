@@ -89,7 +89,6 @@ export default class extends EventEmitter {
         }
 
         if(this.obstacleBody.position.z > 3 && this.obstacleBody.position.z < 3+this.gameSpeed ){
-            console.log('yes');
             this.emit('obsPassed');
         }
 
