@@ -13,7 +13,7 @@ export default class {
         this.resources = this.experience.resources;
         this.items = this.resources.items;
         //sound
-        this.items.track1.play();
+        // this.items.track1.play();
         this.setEventListners();
         this.stringMatcher = "";
     }

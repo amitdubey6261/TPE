@@ -9,7 +9,12 @@ export default class{
     }
 
     handleFunctionalities(){
+        this.handleLoader();
         this.handleSignupLogin();
+    }
+    // login-handle
+    handleLoader(){
+        this.elements.loader.style.display = 'none';
     }
     
     handleSignupLogin(){
@@ -17,7 +22,6 @@ export default class{
         this.handleCloseButtonSL();
     }
 
-    //toggle the signup login signup
     toggleLoginPageToSignUpAndViceVersa(){
 
         this.elements.l_signupButton.addEventListener('click' , ()=>{

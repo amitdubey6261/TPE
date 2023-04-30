@@ -49,7 +49,7 @@ export default class Experience {
         this.resources.on("ready", () => {
             this.handleHTML = new HandleHTML();
             this.video_p5 = new p5(Video());
-            this.p5 = new p5(Sketch());
+            // this.p5 = new p5(Sketch());
             this.helpers = new Helpers();
             this.controllers = new Controllers();
             this.WPWV = new WPWV();

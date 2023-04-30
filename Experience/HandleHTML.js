@@ -20,6 +20,7 @@ export default class {
         this.navbar = document.querySelector('nav');
         this.loginPage = document.querySelector('.login-container');
         this.signupPage = document.querySelector('.signup-container');
+        this.loader = document.querySelector('.loader-container');
     }
 
     loadButtons() {
@@ -61,6 +62,7 @@ export default class {
         this.domElements.navbar = this.navbar;
         this.domElements.loginPage = this.loginPage;
         this.domElements.signupPage = this.signupPage;
+        this.domElements.loader = this.loader ;
         this.domElements.nvb1 = this.nvb1;
         this.domElements.nvb2 = this.nvb2;
         this.domElements.nvb3 = this.nvb3;
