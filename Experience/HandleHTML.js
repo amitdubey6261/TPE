@@ -40,6 +40,9 @@ export default class {
         this.nvb6 = document.querySelector('#nvb6');
         this.nvb7 = document.querySelector('#nvb7');
         this.nvb8 = document.querySelector('#nvb8');
+        this.nvb9 = document.querySelector('#nvb9');
+        this.nvb10 = document.querySelector('#nvb10');
+        this.nvb11 = document.querySelector('#nvb11');
 
         this.logoutButton = document.querySelector('#logout');
     }
@@ -76,6 +79,9 @@ export default class {
         this.domElements.nvb6 = this.nvb6;
         this.domElements.nvb7 = this.nvb7;
         this.domElements.nvb8 = this.nvb8;
+        this.domElements.nvb9 = this.nvb9;
+        this.domElements.nvb10 = this.nvb10;
+        this.domElements.nvb11 = this.nvb11;
         this.domElements.l_loginButton = this.l_loginButton;
         this.domElements.l_signupButton = this.l_signupButton;
         this.domElements.s_loginButton = this.s_loginButton;

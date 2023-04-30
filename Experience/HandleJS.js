@@ -37,8 +37,16 @@ export default class{
 
     
     handleSignupLogin(){
+        this.handleSigninClick();
         this.toggleLoginPageToSignUpAndViceVersa();
         this.handleCloseButtonSL();
+    }
+
+    handleSigninClick(){
+        //signinClick
+        this.elements.nvb10.addEventListener('click' , ()=>{
+            this.elements.signupPage.style.display = 'block'
+        })
     }
 
     toggleLoginPageToSignUpAndViceVersa(){

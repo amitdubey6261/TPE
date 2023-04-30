@@ -201,8 +201,8 @@ nav {
 .string-and-eye {
     border: 1px solid var(--border);
     border-radius: 10px;
-    width: 30vw;
-    height: 2cm;
+    width: 80%;
+    height: 1.5cm;
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -232,7 +232,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     border: 1px solid var(--border);
 }
 
@@ -252,18 +252,12 @@ nav {
     justify-content: space-evenly;
 }
 
-.eye-string-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
 .string-flash {
     color: var(--col2);
-    margin-left: 10px;
+    margin-left: 10px ;
+    font-size: 0.5cm;
+    font-weight: bold;
 }
-
 
 /* stats-box-styling  */
 
@@ -305,7 +299,7 @@ nav {
     height: 5% ;
 }
 .stb-three-dot-container{
-    width: 12%;
+    width: 1cm;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -352,9 +346,10 @@ nav {
     left: 50%;
     transform: translate(-50% , -50%);
     border-radius: 50%;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid black;
     z-index: 1;
     overflow: hidden;
+    border: 2px solid white;
 }
 
 .round-loader-inner{
