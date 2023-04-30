@@ -29,6 +29,7 @@ export default class {
         this.loadNavButtons();
         this.loadLoginButtons();
         this.loadsignupButtons();
+        this.loadstatsBoxButtons();
     }
 
     loadNavButtons() {
@@ -60,6 +61,11 @@ export default class {
         this.signupCloseButton = document.querySelector('#signup-close-btn');
     }
 
+    loadstatsBoxButtons(){
+        this.statsBoxClose = document.querySelector('.stb-three-dot-container');
+    }
+    
+
     createDomElements() {
 
         this.domElements = {};
@@ -82,11 +88,13 @@ export default class {
         this.domElements.nvb9 = this.nvb9;
         this.domElements.nvb10 = this.nvb10;
         this.domElements.nvb11 = this.nvb11;
+
         this.domElements.l_loginButton = this.l_loginButton;
         this.domElements.l_signupButton = this.l_signupButton;
         this.domElements.s_loginButton = this.s_loginButton;
         this.domElements.s_signupButton = this.s_signupButton;
         this.domElements.loginclose = this.loginCloseButton;
         this.domElements.signupclose = this.signupCloseButton;
+        this.domElements.statsClose = this.statsBoxClose ; 
     }
 }

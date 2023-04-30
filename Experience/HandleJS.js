@@ -28,8 +28,15 @@ export default class{
     //handleStatBox
     handleStatsBox(){
         this.elements.statsBox.style.display = 'block';
+        this.handleStatsBoxClose();
     }
 
+    handleStatsBoxClose(){
+        this.elements.statsClose.addEventListener('click' , ()=>{
+            this.elements.statsBox.style.display = 'none' ;
+        })
+    }
+    //string And Eye
     handleStringAndEye(){
         this.elements.stringAndEye.style.display = 'flex';
 
