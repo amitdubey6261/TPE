@@ -3,10 +3,12 @@ import CannonDebugger from 'cannon-es-debugger';
 
 import Experience from '../Experience';
 import Words from './Words';
+import EventEmitter from 'events';
 
 
-export default class {
+export default class extends EventEmitter {
     constructor() {
+        super();
         this.experience = new Experience();
         this.timeStep = 1 / 30;
         this.canvas = this.experience.canvas;
@@ -18,7 +20,6 @@ export default class {
         this.setWorld();
         this.setDebg();
         this.createCannonBodies();
-        this.strIdx = 0 ;
     }
 
     setWorld() {
@@ -83,15 +84,13 @@ export default class {
 
         this.obstacleBody.position.z += this.gameSpeed ; 
 
-        if(this.obstacleBody.position.z > -3 ) {
-            this.strIdx++ ;
-            if(this.strIdx > Words.length-1 ){
-                this.strIdx = 0 ; 
-            }
-        }
         if(this.obstacleBody.position.z > 30) {
             this.obstacleBody.position.set( 0 , 2 , -100 );
-            // console.log(Words[this.strIdx])
+        }
+
+        if(this.obstacleBody.position.z > 3 && this.obstacleBody.position.z < 3+this.gameSpeed ){
+            console.log('yes');
+            this.emit('obsPassed');
         }
 
         //Snap character to x,z axis

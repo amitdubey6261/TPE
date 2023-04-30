@@ -4,7 +4,7 @@ export default class{
     constructor(elements){
         this.experience = new Experience();
         this.elements = elements ; 
-        console.log(this.elements);
+        console.log(this.elements)
         this.handleFunctionalities();
     }
 

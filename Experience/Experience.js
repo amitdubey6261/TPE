@@ -17,6 +17,7 @@ import Environment from './World/Environment';
 import Sketch from './Sketch';
 import HandleHTML from './HandleHTML';
 import Video from './Video';
+import Typing from './World/Typing';
 
 export default class Experience {
     static instance;
@@ -26,7 +27,6 @@ export default class Experience {
             return Experience.instance;
         }
 
-        console.log(canvases)
         Experience.instance = this;
         this.canvas = canvases.canvas;
         this.video_canvas = canvases.video_canvas ;
@@ -49,13 +49,20 @@ export default class Experience {
         this.resources.on("ready", () => {
             this.handleHTML = new HandleHTML();
             this.video_p5 = new p5(Video());
-            // this.p5 = new p5(Sketch());
+            // this.ml_p5 = new p5(Sketch());
             this.helpers = new Helpers();
             this.controllers = new Controllers();
-            this.WPWV = new WPWV();
             this.environment = new Environment();
+            this.WPWV = new WPWV();
             this.worldViusal = new WorldVisual();
             this.worldPhysics = new WorldPhysics();
+
+
+            this.worldPhysics.on("obsPassed" , ()=>{
+                this.obsPassed();
+            })
+
+            this.handleTyping = new Typing();
         })
     }
 
@@ -71,6 +78,11 @@ export default class Experience {
         if (this.worldViusal) this.worldViusal.update();
         if (this.worldPhysics) this.worldPhysics.update();
         if (this.environment) this.environment.update();
-        if (this.WPWV) this.WPWV.update();
+        if (this.handleTyping) this.handleTyping.update();
     }
+
+    obsPassed(){
+        this.handleTyping.obsPassed();
+    }
+
 }

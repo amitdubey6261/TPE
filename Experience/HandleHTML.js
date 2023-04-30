@@ -14,6 +14,7 @@ export default class {
     loadDom() {
         this.loadPages();
         this.loadButtons();
+        this.loadReplacers();
     }
 
     loadPages() {
@@ -30,6 +31,10 @@ export default class {
         this.loadLoginButtons();
         this.loadsignupButtons();
         this.loadstatsBoxButtons();
+    }
+
+    loadReplacers(){
+        this.stringReplace = document.querySelector(".string-flash");
     }
 
     loadNavButtons() {
@@ -52,7 +57,6 @@ export default class {
         this.l_loginButton = document.querySelector('#l-login')
         this.l_signupButton = document.querySelector('#l-signup')
         this.loginCloseButton = document.querySelector('#login-close-btn');
-        // console.log(this.loginCloseButton)
     }
     
     loadsignupButtons() {
@@ -82,7 +86,7 @@ export default class {
         this.domElements.nvb3 = this.nvb3;
         this.domElements.nvb4 = this.nvb4;
         this.domElements.nvb5 = this.nvb5;
-        this.domElements.nvb6 = this.nvb6;
+        this.domElements.nvb6 = this.nvb6;  
         this.domElements.nvb7 = this.nvb7;
         this.domElements.nvb8 = this.nvb8;
         this.domElements.nvb9 = this.nvb9;
@@ -96,5 +100,6 @@ export default class {
         this.domElements.loginclose = this.loginCloseButton;
         this.domElements.signupclose = this.signupCloseButton;
         this.domElements.statsClose = this.statsBoxClose ; 
+        this.domElements.stringReplace = this.stringReplace ;
     }
 }
