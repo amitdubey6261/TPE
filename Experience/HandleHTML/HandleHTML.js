@@ -1,4 +1,4 @@
-import Experience from "./Experience";
+import Experience from "../Experience";
 import HandleJS from "./HandleJS";
 
 export default class {
@@ -18,12 +18,26 @@ export default class {
     }
 
     loadPages() {
+        this.loadSignupInputs();
+        this.loadSignInInputs();
         this.navbar = document.querySelector('nav');
         this.loginPage = document.querySelector('.login-container');
         this.signupPage = document.querySelector('.signup-container');
         this.loader = document.querySelector('.loader-container');
         this.statsBox = document.querySelector('.stats-box');
         this.stringAndEye = document.querySelector('.string-and-eye');
+    }
+
+    loadSignupInputs(){
+        this.usernameInput = document.querySelector('#username');
+        this.emailSUInput = document.querySelector('#email-s');
+        this.passwdSUInput = document.querySelector('#password-s');
+        this.confirmPasswd = document.querySelector('#password-sc');
+    }
+
+    loadSignInInputs(){
+        this.emailSIInput = document.querySelector("#signin-input");
+        this.passwdSIInput = document.querySelector("#signin-passwd");
     }
 
     loadButtons() {
@@ -101,5 +115,15 @@ export default class {
         this.domElements.signupclose = this.signupCloseButton;
         this.domElements.statsClose = this.statsBoxClose ; 
         this.domElements.stringReplace = this.stringReplace ;
+
+        this.domElements.emailSIInput = this.emailSIInput ; 
+        this.domElements.passwdSIInput = this.passwdSIInput ;
+
+        this.domElements.usernameInp = this.usernameInput ; 
+        this.domElements.emailSUInput = this.emailSUInput ; 
+        this.domElements.passwdSUInput = this.passwdSUInput ;
+        this.domElements.confirmPasswd = this.confirmPasswd ;  
+
+
     }
 }

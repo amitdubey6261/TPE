@@ -15,7 +15,7 @@ import WorldPhysics from './World/WorldPhysics';
 import WPWV from './World/WPWV';
 import Environment from './World/Environment';
 import Sketch from './Sketch';
-import HandleHTML from './HandleHTML';
+import HandleHTML from './HandleHTML/HandleHTML';
 import Video from './Video';
 import Typing from './World/Typing';
 import HandleVideo from './HandleVideo';

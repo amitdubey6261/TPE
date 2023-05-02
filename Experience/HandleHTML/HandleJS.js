@@ -1,4 +1,7 @@
-import Experience from "./Experience";
+import Experience from "../Experience";
+import HandleLogout from "./Authentication/HandleLogout";
+import HandleSignIn from "./Authentication/HandleSignIn";
+import HandleSignUp from "./Authentication/HandleSignUp";
 
 export default class{
     constructor(elements){
@@ -14,6 +17,8 @@ export default class{
         this.handleNav();
         this.handleStatsBox();
         this.handleStringAndEye();
+
+        this.handleInputs();
     }
     // login-handle
     handleLoader(){
@@ -77,5 +82,11 @@ export default class{
         this.elements.signupclose.addEventListener('click' , ()=>{
             this.elements.signupPage.style.display = 'none';
         })
+    }
+
+    handleInputs(){
+        this.SigninInputs = new HandleSignUp(this.elements);
+        this.LoginInputs = new HandleSignIn(this.elements);
+        this.Logout = new HandleLogout(this.elements);
     }
 }

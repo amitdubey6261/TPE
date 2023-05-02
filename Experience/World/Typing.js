@@ -4,20 +4,22 @@ import Words from "./Words";
 export default class {
     constructor() {
         this.experience = new Experience();
-        this.charachterBody = this.experience.worldPhysics.charachterBody ;
-        this.stringMatcher = "";
+        this.charachterBody = this.experience.worldPhysics.charachterBody;
         this.ostaclePassed = false;
         this.stringIdx = 0;
         this.experience.handleHTML.stringReplace.innerHTML = Words[this.stringIdx];
-        this.setEventListners();
-        this.setJump()
-    }
+        this.stringMatcher = "";
+        this.handleEventListner();
+        this.setJump();
+        this.stringAndEye = this.experience.handleHTML.domElements.stringAndEye;
 
-    setEventListners() {
-        window.addEventListener('keydown', (e) => {
+        this.fun = (e) => {
             if (e.defaultPrevented) return;
             else if (e.key == 'F11') {
                 this.setFullScreen();
+            }
+            else if(e.key == 'Escape'){
+                window.removeEventListener('keydown', this.fun );
             }
             else if (e.key == 'Backspace') {
                 if (!this.stringMatcher.length == 0) {
@@ -29,7 +31,20 @@ export default class {
             }
             console.log(this.stringMatcher)
             e.preventDefault();
+        }
+    }
+
+
+
+
+    handleEventListner() {
+        this.experience.handleHTML.domElements.stringAndEye.addEventListener('click', () => {
+            this.setEventListners();
         })
+    }
+
+    setEventListners() {
+        window.addEventListener('keydown', this.fun);
     }
 
     setFullScreen() {
@@ -55,15 +70,31 @@ export default class {
     }
 
     update() {
-        if(this.stringMatcher.length == Words[this.stringIdx].length && this.stringMatcher === Words[this.stringIdx]){
+        if (this.stringMatcher.length == Words[this.stringIdx].length && this.stringMatcher === Words[this.stringIdx]) {
             this.setJump();
         }
     }
 
     setJump() {
-        this.charachterBody.velocity.set( 0 , 10 , 0 );
-        this.stringMatcher = "" ; 
+        this.charachterBody.velocity.set(0, 10, 0);
+        this.stringMatcher = "";
     }
 
 
 }
+// window.addEventListener('keydown', (e) => {
+//     if (e.defaultPrevented) return;
+//     else if (e.key == 'F11') {
+//         this.setFullScreen();
+//     }
+//     else if (e.key == 'Backspace') {
+//         if (!this.stringMatcher.length == 0) {
+//             this.stringMatcher = this.stringMatcher.slice(0, -1);
+//         }
+//     }
+//     else {
+//         this.stringMatcher += e.key;
+//     }
+//     console.log(this.stringMatcher)
+//     e.preventDefault();
+// })
