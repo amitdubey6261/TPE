@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import Experience from '../Experience';
+import Character from './Character';
 
 
 export default class {
@@ -20,6 +21,7 @@ export default class {
     createVisuals() {
         this.addGround();
         this.firstModel();
+        this.addcharachter();
         this.addModels();
     }
 
@@ -54,6 +56,10 @@ export default class {
 
     }
 
+    addcharachter(){
+        this.character = new Character();
+    }
+
     addModels() {
 
         this.modelArrayIdx = 0;
@@ -68,6 +74,7 @@ export default class {
 
     update() {
         this.makeEngine();
+        this.character.update();
     }
 
     makeEngine(){

@@ -10,6 +10,11 @@ export default [
         path:"models/scene1/gameModel.glb"
     },
     {
+        name:"character",
+        type:"glbModel",
+        path:"models/character/chaar.glb"
+    },
+    {
         name : "gameModelTexture",
         type : "imageTexture",
         path: "models/scene1/gameModelTexture.jpg"
