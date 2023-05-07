@@ -4,12 +4,15 @@ import CannonDebugger from 'cannon-es-debugger';
 import Experience from '../Experience';
 import Words from './Words';
 import EventEmitter from 'events';
+import { MeshBasicMaterial } from 'three';
 
 
 export default class extends EventEmitter {
     constructor() {
         super();
         this.experience = new Experience();
+        this.character = this.experience.worldViusal.character.character ; 
+        this.obs = this.experience.worldViusal.obs ; 
         this.timeStep = 1 / 30;
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
@@ -30,7 +33,7 @@ export default class extends EventEmitter {
 
     setDebg() {
         this.cannonDebg = new CannonDebugger(this.scene, this.world, {
-            color: 0xffffff,
+            color: 0xff0000,
             scale: 1.0
         })
     }
@@ -44,7 +47,7 @@ export default class extends EventEmitter {
 
     createCharacter(){
         this.charachterBody = new CANNON.Body({
-            shape : new CANNON.Box(new CANNON.Vec3( 1,1,1)) , 
+            shape : new CANNON.Box(new CANNON.Vec3( 0.7,2,0.7)) , 
             position : new CANNON.Vec3( 0 , 5 , 0 ),
             mass : 60
         })
@@ -62,7 +65,7 @@ export default class extends EventEmitter {
 
     createObstacle(){
         this.obstacleBody = new CANNON.Body({
-            shape : new CANNON.Box(new CANNON.Vec3(0.7,0.7,0.7)),
+            shape : new CANNON.Box(new CANNON.Vec3(1,1,1)),
             position : new CANNON.Vec3( 0 , 2 , -100 ),
             mass : 10
         })
@@ -75,6 +78,13 @@ export default class extends EventEmitter {
     }
 
     update() {
+        //connecting body 
+        this.character.position.copy(this.charachterBody.position );
+        this.character.quaternion.copy(this.charachterBody.quaternion );
+
+        this.obs.position.copy(this.obstacleBody.position );
+        this.obs.quaternion.copy(this.obstacleBody.quaternion );
+
         this.world.step(this.timeStep);
         this.engine();
         this.cannonDebg.update();

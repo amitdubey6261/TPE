@@ -17,7 +17,7 @@ export default class {
 
     setLight(){
         this.abmLight = new THREE.AmbientLight(  0xffffff , 1000);
-        this.scene.fog = new THREE.Fog( 0x993333 , 10 , 100 );
+        // this.scene.fog = new THREE.Fog( 0x993333 , 10 , 100 );
         this.scene.add(this.abmLight);
     }
 

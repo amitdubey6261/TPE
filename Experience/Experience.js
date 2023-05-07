@@ -80,6 +80,7 @@ export default class Experience {
         if (this.worldPhysics) this.worldPhysics.update();
         if (this.environment) this.environment.update();
         if (this.handleTyping) this.handleTyping.update();
+        if(this.WPWV) this.WPWV.update();
     }
 
     obsPassed(){

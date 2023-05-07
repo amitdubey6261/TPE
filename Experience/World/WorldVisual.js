@@ -23,6 +23,7 @@ export default class {
         this.firstModel();
         this.addcharachter();
         this.addModels();
+        this.createObstacle();
     }
 
     addGround(){
@@ -58,6 +59,12 @@ export default class {
 
     addcharachter(){
         this.character = new Character();
+    }
+
+    createObstacle(){
+        this.obs = new THREE.Mesh(new THREE.BoxGeometry(1 , 1, 1) , new THREE.MeshBasicMaterial({color:'0x00ff00'}));
+        this.obs.scale.set(2,2,2);
+        this.scene.add(this.obs);
     }
 
     addModels() {

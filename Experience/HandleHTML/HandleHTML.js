@@ -49,6 +49,7 @@ export default class {
 
     loadReplacers(){
         this.stringReplace = document.querySelector(".string-flash");
+        this.timeReplace = document.querySelector("#stat-op3");
     }
 
     loadNavButtons() {
@@ -114,7 +115,9 @@ export default class {
         this.domElements.loginclose = this.loginCloseButton;
         this.domElements.signupclose = this.signupCloseButton;
         this.domElements.statsClose = this.statsBoxClose ; 
+
         this.domElements.stringReplace = this.stringReplace ;
+        this.domElements.timeReplace = this.timeReplace ; 
 
         this.domElements.emailSIInput = this.emailSIInput ; 
         this.domElements.passwdSIInput = this.passwdSIInput ;

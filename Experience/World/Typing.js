@@ -4,6 +4,7 @@ import Words from "./Words";
 export default class {
     constructor() {
         this.experience = new Experience();
+        this.character = this.experience.worldViusal.character;
         this.charachterBody = this.experience.worldPhysics.charachterBody;
         this.ostaclePassed = false;
         this.stringIdx = 0;
@@ -76,25 +77,10 @@ export default class {
     }
 
     setJump() {
-        this.charachterBody.velocity.set(0, 10, 0);
+        // this.character.JUMP();
+        this.charachterBody.velocity.set(0, 10 , 0);
         this.stringMatcher = "";
     }
 
 
 }
-// window.addEventListener('keydown', (e) => {
-//     if (e.defaultPrevented) return;
-//     else if (e.key == 'F11') {
-//         this.setFullScreen();
-//     }
-//     else if (e.key == 'Backspace') {
-//         if (!this.stringMatcher.length == 0) {
-//             this.stringMatcher = this.stringMatcher.slice(0, -1);
-//         }
-//     }
-//     else {
-//         this.stringMatcher += e.key;
-//     }
-//     console.log(this.stringMatcher)
-//     e.preventDefault();
-// })
