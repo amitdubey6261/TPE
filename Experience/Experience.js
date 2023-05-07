@@ -19,6 +19,7 @@ import HandleHTML from './HandleHTML/HandleHTML';
 import Video from './Video';
 import Typing from './World/Typing';
 import HandleVideo from './HandleVideo';
+import Graph from './Graphs/Graph';
 
 export default class Experience {
     static instance;
@@ -31,6 +32,7 @@ export default class Experience {
         Experience.instance = this;
         this.canvas = canvases.canvas;
         this.video_canvas = canvases.video_canvas ;
+        this.graph_canvas = canvases.graph_canvas ; 
         this.cameraOn = true ; 
         this.scene = new THREE.Scene();
         this.time = new Time();
@@ -57,7 +59,7 @@ export default class Experience {
             this.WPWV = new WPWV();
             this.worldViusal = new WorldVisual();
             this.worldPhysics = new WorldPhysics();
-
+            this.chart =  new Graph();
 
             this.worldPhysics.on("obsPassed" , ()=>{
                 this.obsPassed();

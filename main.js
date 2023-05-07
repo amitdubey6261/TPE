@@ -4,8 +4,8 @@ import Experience from './Experience/Experience';
 
 const canvases = {
     canvas : document.querySelector('.experience-canvas'),
-    video_canvas : document.querySelector('.p5-video')
+    video_canvas : document.querySelector('.p5-video'),
+    graph_canvas : document.querySelector('.graph-canvas'),
 }
 
-// const experience = new Experience(document.querySelector(".experience-canvas"));
 const experience = new Experience( canvases );

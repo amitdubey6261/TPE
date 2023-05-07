@@ -26,6 +26,7 @@ export default class {
         this.loader = document.querySelector('.loader-container');
         this.statsBox = document.querySelector('.stats-box');
         this.stringAndEye = document.querySelector('.string-and-eye');
+        this.chart = document.querySelector('.graph-parent');
     }
 
     loadSignupInputs(){
@@ -95,6 +96,7 @@ export default class {
         this.domElements.loader = this.loader ;
         this.domElements.statsBox = this.statsBox ;
         this.domElements.stringAndEye = this.stringAndEye ;
+        this.domElements.chart = this.chart ; 
 
         this.domElements.nvb1 = this.nvb1;
         this.domElements.nvb2 = this.nvb2;
