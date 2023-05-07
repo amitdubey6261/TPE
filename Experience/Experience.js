@@ -14,9 +14,7 @@ import WorldVisual from './World/WorldVisual';
 import WorldPhysics from './World/WorldPhysics';
 import WPWV from './World/WPWV';
 import Environment from './World/Environment';
-import Sketch from './Sketch';
 import HandleHTML from './HandleHTML/HandleHTML';
-import Video from './Video';
 import Typing from './World/Typing';
 import HandleVideo from './HandleVideo';
 import Graph from './Graphs/Graph';
@@ -33,7 +31,7 @@ export default class Experience {
         this.canvas = canvases.canvas;
         this.video_canvas = canvases.video_canvas ;
         this.graph_canvas = canvases.graph_canvas ; 
-        this.cameraOn = true ; 
+        this.cameraOn = false ; 
         this.scene = new THREE.Scene();
         this.time = new Time();
         this.sizes = new Sizes();

@@ -9,8 +9,8 @@ export default class{
         this.items = this.experience.items ; 
         this.cameraButton  = this.experience.handleHTML.nvb5 ; 
         this.handleCameraClick();
-        // this.video_p5 = new p5(Video());
-        // this.machi_p5 = new p5(Sketch());
+        this.video_p5 = new p5(Video());
+        this.machi_p5 = new p5(Sketch());
     }
 
     handleCameraClick(){
