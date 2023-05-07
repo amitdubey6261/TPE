@@ -1,6 +1,15 @@
-:root{
+/* :root{
     --col2 : rgba(0, 0, 0, 0.9);
     --col4 : rgba(66, 61, 61, 0.8) ; 
+    --col5 : rgba(126, 113, 113, 0.8) ; 
+    --border : rgb( 0 , 0 , 0);
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
+:root{
+    --col2 : rgb(255, 255, 255);
+    --col4 : rgba(0, 0, 0, 0.795) ; 
     --col5 : rgba(126, 113, 113, 0.8) ; 
     --border : rgb( 0 , 0 , 0);
 }
@@ -9,7 +18,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
+    font-family: 'Sigmar', cursive;
 }
 
 html {
@@ -24,7 +34,7 @@ html {
 
 
 .login-container {
-    border: 1px solid var(--col4);
+    border: 2px solid var(--col2);
     border-radius: 10px;
     width: 10cm;
     height: 20cm;
@@ -38,7 +48,7 @@ html {
 
 .signup-container {
     border-radius: 10px;
-    border: 1px solid var(--col4);
+    border: 2px solid var(--col2);
     width: 10cm;
     height: 20cm;
     position: absolute;
@@ -101,7 +111,7 @@ html {
 
 
 nav {
-    border: 1px solid var(--col4);
+    border: 2px solid var(--col2);
     border-radius: 10px;
     width: 2cm;
     height: 80%;
@@ -131,7 +141,7 @@ nav {
     flex-direction: column;
     align-items: center;
     overflow: scroll;
-    border: 1px solid black;
+    border: 1px solid var(--col2);
 }
 
 .nb2::-webkit-scrollbar {
@@ -169,17 +179,17 @@ nav {
 }
 
 .dot1 {
-    border: 1px solid black;
+    border: 1px solid  var(--col2);
     background-color: red;
 }
 
 .dot2 {
-    border: 1px solid black;
+    border: 1px solid  var(--col2);
     background-color: rgb(251, 255, 0);
 }
 
 .dot3 {
-    border: 1px solid black;
+    border: 1px solid  var(--col2);
     background-color: rgb(0, 255, 30);
 }
 
@@ -190,7 +200,7 @@ nav {
     padding: 10px;
     border-radius: 10px;
     transition: all 0.3s ease;
-    border: 1px solid black;
+    border: 1px solid  var(--col2);
 }
 
 .icons:hover {
@@ -204,7 +214,7 @@ nav {
 
 /* string-eye-styling */
 .string-and-eye {
-    border: 1px solid var(--border);
+    border: 2px solid var(--col2);
     border-radius: 10px;
     width: 80%;
     height: 1.5cm;
@@ -258,17 +268,16 @@ nav {
 }
 
 .string-flash {
-    color: var(--col2);
+    color: white;
     margin-left: 10px ;
     font-size: 0.5cm;
-    font-weight: bold;
 }
 
 /* stats-box-styling  */
 
 
 .stats-box{
-    border: 1px solid var(--col4);
+    border: 2px solid var(--col2);
     border-radius: 10px ;
     position: absolute;
     top: 50%;
@@ -302,6 +311,11 @@ nav {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     height: 5% ;
+}
+
+.stats{
+    color: white;
+    font-size:x-large;
 }
 .stb-three-dot-container{
     width: 1cm;
@@ -351,7 +365,7 @@ nav {
     left: 50%;
     transform: translate(-50% , -50%);
     border-radius: 50%;
-    border: 2px solid black;
+    border: 2px solid  var(--col2);
     z-index: 1;
     overflow: hidden;
     border: 2px solid white;
