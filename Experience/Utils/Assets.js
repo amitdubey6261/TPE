@@ -30,16 +30,6 @@ export default [
         path: "images/HDRI.hdr"
     },
     {
-        name :"groundTex",
-        type : "imageTexture",
-        path : "models/ground/GroundTex.jpg"
-    },
-    {
-        name : "ground",
-        type : "glbModel",
-        path : "models/ground/Ground.glb"
-    },
-    {
         name : "alert",
         type : "audio",
         path : "sounds/Alert.mp3"

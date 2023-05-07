@@ -12,7 +12,7 @@ export default class Controllers{
         this.renderer=this.experience.renderer;
         this.camera = this.experience.camera ;
 
-        this.createOrbitControllers();
+        // this.createOrbitControllers();
         this.update();
     }
 
@@ -23,7 +23,7 @@ export default class Controllers{
     }
 
     update(){
-        this.orbitControl.update();
+        // this.orbitControl.update();
     }
 
     updateCallback(){

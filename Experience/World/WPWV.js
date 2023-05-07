@@ -6,7 +6,7 @@ import Sounds from './Sounds';
 
 export default class {
     constructor() {
-        this.GameSpeed = 1;
+        this.GameSpeed = 0.4;
         this.experience = new Experience();
         this.elements = this.experience.handleHTML.domElements ; 
         this.time  = this.experience.time ; 

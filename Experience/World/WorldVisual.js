@@ -27,16 +27,20 @@ export default class {
     }
 
     addGround(){
-        this.bakedModelTexture2 = this.items.groundTex ; 
-        this.bakedModelTexture2.flipY = 0 ; 
-        this.bakedModelTexture2.encoding = THREE.sRGBEncoding ; 
-        this.bakedModelMaterial2 = new THREE.MeshBasicMaterial({map:this.bakedModelTexture2});
-        this.ground = this.items.ground ; 
+        this.ground = new THREE.Mesh(new THREE.PlaneGeometry(1000 , 1000) , new THREE.MeshBasicMaterial({color:0x000000}));
+        this.ground.rotateX(-Math.PI/2);
+        this.scene.add(this.ground);
 
-        this.ground.scene.traverse((child)=>{
-            child.material = this.bakedModelMaterial2 ; 
-        })
+        this.createScene();
+    }
 
+    createScene(){
+        this.sceneBuilding = [] ; 
+        for(let i = 0 ; i<250 ; i++){
+            this.sceneBuilding[i] = new THREE.Mesh(new THREE.BoxGeometry( 0.5 , Math.floor(30+Math.random()*50),0.5 ) , new THREE.MeshBasicMaterial({color:0x000000})) ; 
+            this.sceneBuilding[i].position.set( i-125 , 0 , -100 );
+            this.scene.add(this.sceneBuilding[i]);
+        }
     }
 
     firstModel() {
@@ -63,7 +67,7 @@ export default class {
     }
 
     createObstacle(){
-        this.obs = new THREE.Mesh(new THREE.BoxGeometry(1 , 1, 1) , new THREE.MeshBasicMaterial({color:'0x00ff00'}));
+        this.obs = new THREE.Mesh(new THREE.BoxGeometry(1 , 1, 1) , new THREE.MeshStandardMaterial({color:0x7393B3}));
         this.obs.scale.set(2,2,2);
         this.scene.add(this.obs);
     }

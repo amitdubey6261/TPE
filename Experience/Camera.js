@@ -9,14 +9,14 @@ export default class Camera{
         this.canvas= this.experience.canvas;
 
         this.createPerspectiveCam();
-        this.createOrthoGraphicCam();
+        // this.createOrthoGraphicCam();
 
         this.update();
     }
 
     createPerspectiveCam(){
         this.perspectiveCam = new THREE.PerspectiveCamera( 35 , this.sizes.aspect , 0.1 , 1000 );
-        this.perspectiveCam.position.set( 40 , 20 , 0 );
+        this.perspectiveCam.position.set( 0 , 6 , 15)
         this.scene.add(this.perspectiveCam);
     }
 
@@ -30,18 +30,18 @@ export default class Camera{
             -100,
             100
         );
-        this.scene.add(this.orthoGraphicCam);
+        // this.scene.add(this.orthoGraphicCam);
     }
 
     resize(){
         this.perspectiveCam.updateProjectionMatrix();
         this.perspectiveCam.aspect = this.sizes.aspect;
 
-        this.orthoGraphicCam.left = (-this.sizes.aspect * this.sizes.frustum )/2 ;
-        this.orthoGraphicCam.right= ( this.sizes.aspect * this.sizes.frustum )/2 ; 
-        this.orthoGraphicCam.top=   this.sizes.frustum/2 ;
-        this.orthoGraphicCam.bottom=-this.sizes.frustum/2 ;
-        this.orthoGraphicCam.updateProjectionMatrix();
+        // this.orthoGraphicCam.left = (-this.sizes.aspect * this.sizes.frustum )/2 ;
+        // this.orthoGraphicCam.right= ( this.sizes.aspect * this.sizes.frustum )/2 ; 
+        // this.orthoGraphicCam.top=   this.sizes.frustum/2 ;
+        // this.orthoGraphicCam.bottom=-this.sizes.frustum/2 ;
+        // this.orthoGraphicCam.updateProjectionMatrix();
     }
 
     update(){
