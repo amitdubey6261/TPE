@@ -20,6 +20,11 @@ export default [
         path: "models/scene1/gameModelTexture.jpg"
     },
     {
+        name : "gameModelTexture2",
+        type : "imageTexture",
+        path: "models/scene1/NewUI.jpg"
+    },
+    {
         name: "envTexture",
         type: "HDRIImg",
         path: "images/HDRI.hdr"

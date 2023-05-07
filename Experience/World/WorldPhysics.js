@@ -49,7 +49,7 @@ export default class extends EventEmitter {
         this.charachterBody = new CANNON.Body({
             shape : new CANNON.Box(new CANNON.Vec3( 0.7,2,0.7)) , 
             position : new CANNON.Vec3( 0 , 5 , 0 ),
-            mass : 60
+            mass : 10000
         })
     }
 
@@ -87,7 +87,7 @@ export default class extends EventEmitter {
 
         this.world.step(this.timeStep);
         this.engine();
-        this.cannonDebg.update();
+        // this.cannonDebg.update();
     }
 
     engine(){

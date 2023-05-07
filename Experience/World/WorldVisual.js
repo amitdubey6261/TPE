@@ -40,7 +40,8 @@ export default class {
     }
 
     firstModel() {
-        this.bakedModelTexture1 = this.items.gameModelTexture;
+        // this.bakedModelTexture1 = this.items.gameModelTexture;
+        this.bakedModelTexture1 = this.items.gameModelTexture2;
         this.bakedModelTexture1.flipY = 0;
         this.bakedModelTexture1.encoding = THREE.sRGBEncoding;
         this.bakedModelMaterial1 = new THREE.MeshBasicMaterial({ map: this.bakedModelTexture1 });
@@ -76,7 +77,7 @@ export default class {
             this.modelArrayIdx++;
         })
 
-        this.scene.add(this.ground.scene);
+        // this.scene.add(this.ground.scene);
     }
 
     update() {
