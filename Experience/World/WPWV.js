@@ -19,7 +19,7 @@ export default class {
     }
 
     update(){
-        this.elements.timeReplace.innerHTML = `${Math.floor(this.time.elapsed/1000)} sec`;
+        this.elements.timeReplace.innerHTML = `${Math.floor(this.time.elapsed/1000)}s`;
     }
 
 }
